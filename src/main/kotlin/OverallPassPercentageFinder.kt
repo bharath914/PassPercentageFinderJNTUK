@@ -24,9 +24,10 @@ class OverallPassPercentageFinder {
         println("Enter The File Path Which contains only results")
         val scanner = Scanner(System.`in`)
         var path = scanner.next()
+        val inverted = 34 // ascii value of " is 34
         if (path.startsWith("\"")&&path.endsWith("\"")){
           path=  path.trim {
-                it == '"'
+                it == inverted.toChar()
             }
         }
         try {
@@ -36,6 +37,7 @@ class OverallPassPercentageFinder {
             /**
              * Paths should be changed everytime for specific result percentage.
              */
+
             launch {
                 readCsv(path.trim())
             }.invokeOnCompletion {

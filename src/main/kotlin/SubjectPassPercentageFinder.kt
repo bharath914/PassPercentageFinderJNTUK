@@ -16,9 +16,10 @@ class SubjectPassPercentageFinder {
         println("Enter the Result CSV Path")
         val scanner = Scanner(System.`in`)
         var path = scanner.next()
-        if (path.startsWith("\"") && path.endsWith("\"")) {
-            path = path.trim {
-                it == '"'
+        val inverted = 34 // ascii value of " is 34
+        if (path.startsWith("\"")&&path.endsWith("\"")){
+            path=  path.trim {
+                it == inverted.toChar()
             }
         }
         try {
