@@ -48,7 +48,7 @@ class SubjectPassPercentageFinder {
         }
         perSubjectList.forEach {
             if (it.grade != "F" && it.grade != "ABSENT" && it.grade != "AB") {
-                totalPassCount++;
+                totalPassCount++
             }
         }
         val percent = (totalPassCount.toFloat() / perSubjectList.size.toFloat()) * 100f
